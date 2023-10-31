@@ -1,5 +1,5 @@
-const Shelter = require('./Shelter');
-const Cat = require('./Cat');
+const Shelter = require('./shelter');
+const Cat = require('./cat');
 
 Shelter.hasMany(Cat, {
   foreignKey: 'shelter_id',
