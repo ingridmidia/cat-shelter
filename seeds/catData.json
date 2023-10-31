@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Mia",
+        "breed": "Domestic Shorthair",
+        "age": 3,
+        "gender": "Female",
+        "description": "Mia is an adorable tabby cat looking for a new home. She is a good choice if you are looking for to be a only cat household.",
+        "adoptable": true,
+        "shelter_id": "1"
+    },
+    {
+        "name": "Lily",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Female",
+        "description": "Lily is a true lap cat. She loves to curl up on your lap and purr away, making you feel warm and loved.",
+        "adoptable": true,
+        "shelter_id": "1"
+    },
+    {
+        "name": "Leo",
+        "breed": "Domestic Shorthair",
+        "age": 3,
+        "gender": "Male",
+        "description": "Leo is a healthy cat, and he's been neutered. You can expect many happy and healthy years with him.",
+        "adoptable": false,
+        "shelter_id": "2"
+    },
+    {
+        "name": "Oliver",
+        "breed": "Domestic Shorthair",
+        "age": 1,
+        "gender": "Male",
+        "description": "Oliver is a people-oriented cat and gets along well with children and adults. He's friendly and sociable, making him an excellent companion for families.",
+        "adoptable": false,
+        "shelter_id": "2"
+    },
+    {
+        "name": "Luna",
+        "breed": "Domestic Shorthair",
+        "age": 6,
+        "gender": "Female",
+        "description": "Luna is a clever cat, quick to learn and adapt. She can be taught tricks and is always up for a stimulating puzzle toy.",
+        "adoptable": true,
+        "shelter_id": "3"
+    },
+    {
+        "name": "Rocky",
+        "breed": "Domestic Longhair",
+        "age": 4,
+        "gender": "Male",
+        "description": "Rocky is a sweet and loving cat who enjoys being near his humans. He'll curl up next to you for a cozy cuddle session and is sure to warm your heart with his purrs.",
+        "adoptable": true,
+        "shelter_id": "3"
+    }
+]
