@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Cat, Shelter } = require('../models');
+const { Cat, Shelter } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
