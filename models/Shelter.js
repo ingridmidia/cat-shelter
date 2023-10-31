@@ -16,7 +16,7 @@ Shelter.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Sheltername: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
