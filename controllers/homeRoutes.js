@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Cat, Shelter } = require('../models');
+const Cat = require('../models/cat');
+const Shelter = require('../models/shelter');
 
 router.get('/', async (req, res) => {
   try {
@@ -12,10 +13,10 @@ router.get('/', async (req, res) => {
     const cats = catsData.map((cat) => cat.get({ plain: true }));
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
 
-    res.render('main', {
+    res.render('dashboard', {
       cats,
       shelters,
-      loggedIn: req.session.loggedIn, // Assuming 'loggedIn' is stored in the session
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.error(err);
