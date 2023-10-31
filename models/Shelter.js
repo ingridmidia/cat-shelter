@@ -43,7 +43,7 @@ Shelter.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Shelter',
+    modelName: 'shelter',
   }
 );
 
