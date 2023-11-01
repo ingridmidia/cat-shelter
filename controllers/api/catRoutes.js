@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const { Cat, Shelter } = require('../../models'); // Assuming you have these models
-const fileUpload = require('express-fileupload');
-const imgur = require('imgur');
+// const fileUpload = require('express-fileupload');
+// const imgur = require('imgur');
 const { Model } = require('sequelize');
 
-router.use(fileUpload());
+// router.use(fileUpload());
 
-const ImgurClient = require('imgur').ImgurClient;
+// const ImgurClient = require('imgur').ImgurClient;
 
-const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+// const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+// const CLIENT_ID = process.env.CLIENT_ID;
+// const CLIENT_SECRET = process.env.CLIENT_SECRET;
+// const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 
-const client = new ImgurClient({
-  clientId: CLIENT_ID,
-  clientSecret: CLIENT_SECRET,
-  refreshToken: REFRESH_TOKEN,
-});
+// const client = new ImgurClient({
+//   clientId: CLIENT_ID,
+//   clientSecret: CLIENT_SECRET,
+//   refreshToken: REFRESH_TOKEN,
+// });
 
 router.post('/new', async (req, res) => {
   try {
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/cats/:id', async (req, res) => {
   try {
     const cat = await Cat.findByPk(req.params.id);
     if (!cat) {
