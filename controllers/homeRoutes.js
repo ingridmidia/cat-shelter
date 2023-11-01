@@ -4,7 +4,21 @@ const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
 
 router.get('/', async (req, res) => {
-  try {
+  res.render('login');
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/dashboard', async (req, res) => {
+    try {
     // Fetch data from the database (e.g., cats and shelters) as needed
     const catsData = await Cat.findAll();
     const sheltersData = await Shelter.findAll();
@@ -16,23 +30,13 @@ router.get('/', async (req, res) => {
     res.render('dashboard', {
       cats,
       shelters,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
-});
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-
-  res.render('login');
-});
+})
 
 // Define other routes for the homepage as needed
 // For example, you can create additional routes for specific actions or pages on the homepage.
