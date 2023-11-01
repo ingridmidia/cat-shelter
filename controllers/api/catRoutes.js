@@ -53,5 +53,49 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/shelter/:id', async (req, res) => {
+  try {
+      const cat = await Cat.findByPk(req.params.id, {
+          include: [{ model: Shelter }]
+      });
+      if (!cat) {
+          res.status(404).json({ message: 'No cat found with that ID!' });
+          return;
+      }
+      res.json(cat.Shelter);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+router.put('/adoptable/:id', async (req, res) => {
+  try {
+      const cat = await Cat.update(
+          { isAdoptable: true }, // Mark as adoptable
+          { where: { id: req.params.id } }
+      );
+      if (!cat) {
+          res.status(404).json({ message: 'No cat found with that ID!' });
+          return;
+      }
+      res.json(cat);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+router.delete('/:id', async (req, res) => {
+    try {
+        const cat = await Cat.destroy({
+            where: { id: req.params.id }
+        });
+        if (!cat) {
+            res.status(404).json({ message: 'No cat found with that ID!' });
+            return;
+        }
+        res.json({ message: 'Cat deleted!' });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;

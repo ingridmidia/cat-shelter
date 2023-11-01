@@ -37,7 +37,7 @@ Cat.init(
         shelter_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Shelter',
+                model: 'shelter',
                 key: 'id',
             },
         },
