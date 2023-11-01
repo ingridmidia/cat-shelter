@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Cat, Shelter } = require('../../models'); // Assuming you have these models
+const { Cat } = require('../../models'); // Assuming you have these models
 // const fileUpload = require('express-fileupload');
 // const imgur = require('imgur');
 const { Model } = require('sequelize');
@@ -46,21 +46,6 @@ router.get('/cats/:id', async (req, res) => {
       return;
     }
     res.json(cat);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/shelter/:id', async (req, res) => {
-  try {
-    const cat = await Cat.findByPk(req.params.id, {
-      include: [{ model: Shelter }],
-    });
-    if (!cat) {
-      res.status(404).json({ message: 'No cat found with that ID!' });
-      return;
-    }
-    res.json(cat.Shelter);
   } catch (err) {
     res.status(500).json(err);
   }
