@@ -7,7 +7,7 @@
             <h3>{{this.name}}</h3>
             <p>Age: {{this.age}}</p>
             <p>Description: {{this.description}}</p>
-            <a href="/cats/{{this.id}}">View Details</a>
+            <a href="/api/cat/{{this.id}}">View Details</a>
         </li>
         {{/each}}
     </ul>
@@ -22,7 +22,7 @@
             <address>
                 {{this.address}}
             </address>
-            <a href="/shelters/{{this.id}}">More Info</a>
+            <a href="/api/shelter/{{this.id}}">More Info</a>
         </li>
         {{/each}}
     </ul>

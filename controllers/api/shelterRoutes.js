@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const { Shelter } = require('../../models');
 
 router.get('/shelter', async (req, res) => {
@@ -74,6 +75,32 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// Additional GET routes for shelters
+router.get('/', async (req, res) => {
+  try {
+    const allShelters = await Shelter.findAll();
+    res.json(allShelters);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const shelter = await Shelter.findByPk(req.params.id);
+    if (!shelter) {
+      console.log(`Shelter with ID ${req.params.id} not found`);
+      res.status(404).json({ message: 'No shelter found with that ID!' });
+      return;
+    }
+    console.log(`Shelter with ID ${req.params.id} found:`, shelter);
+    res.json(shelter);
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).json(err);
   }
 });
 
