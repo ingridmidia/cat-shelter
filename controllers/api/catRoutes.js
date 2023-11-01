@@ -53,6 +53,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/shelter/:id', async (req, res) => {
   try {
       const cat = await Cat.findByPk(req.params.id, {
