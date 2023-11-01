@@ -67,12 +67,45 @@
 
 const express = require('express');
 const router = express.Router();
-const { Cat } = require('../../models'); // Import your Cat model
+const { Cat, Shelter } = require('../../models'); // Assuming you have these models
+const fileUpload = require('express-fileupload');
+const imgur = require('imgur');
+const { Model } = require('sequelize');
 
-// Define a route to get a cat by ID
-router.get('/cats/:id', async (req, res) => {
-  console.log(`Request for /cats/${req.params.id} received`);
+router.use(fileUpload());
 
+const ImgurClient = require('imgur').ImgurClient;
+
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+
+const client = new ImgurClient({
+  clientId: CLIENT_ID,
+  clientSecret: CLIENT_SECRET,
+  refreshToken: REFRESH_TOKEN,
+});
+
+router.post('/new', async (req, res) => {
+  try {
+    const newCat = await Cat.create(req.body);
+    res.status(201).json(newCat);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const allCats = await Cat.findAll();
+    res.json(allCats);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
   try {
     const cat = await Cat.findByPk(req.params.id);
     if (!cat) {

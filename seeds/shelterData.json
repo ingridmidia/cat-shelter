@@ -1,23 +1,15 @@
 [
     {
-      "username": "Tree House Humane Society",
+      "username": "AC-Loop",
       "password": "password12345"
     },
     {
-      "username": "The Catcade",
+      "username": "AC-Logan Square",
       "password": "password12345"
       
     },
     {
-      "username": "CatVando",
-      "password": "password12345"
-    },
-    {
-      "username": "Heartland Animal Shelter",
-      "password": "password12345"
-    },
-    {
-      "username": "Feline Friends Chicago",
+      "username": "AC-Pilsen",
       "password": "password12345"
     }
   ]
