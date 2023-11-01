@@ -1,8 +1,32 @@
 const router = require('express').Router();
 const { Shelter } = require('../../models');
 
+router.get('/shelter', async (req, res) => {
+  try {
+    const allShelters = await Shelter.findAll();
+    res.json(allShelters);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/shelter/:id', async (req, res) => {
+  try {
+    const cat = await Cat.findByPk(req.params.id, {
+      include: [{ model: Shelter }],
+    });
+    if (!cat) {
+      res.status(404).json({ message: 'No cat found with that ID!' });
+      return;
+    }
+    res.json(cat.Shelter);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Create a new shelter
-router.post('/', async (req, res) => {
+router.post('/shelter', async (req, res) => {
   try {
     const shelterData = await Shelter.create(req.body);
     // Optionally, you can generate a token or session here for automatic login
