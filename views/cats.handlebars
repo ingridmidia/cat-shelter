@@ -3,7 +3,7 @@
     {{#each cats as |cat|}}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{cat.name}}</h5>
+            <a href="/api/cats/{{this.id}}" class="card-title">{{cat.name}}</a>
             {{!-- <a href="/shelter/{{shelter.id}}" class="btn btn-primary">View Cats</a> --}}
         </div>
     </div>
