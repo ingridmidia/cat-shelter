@@ -10,16 +10,15 @@
 
 <body>
     <header>
-        <h1>Welcome to Cat Adoption</h1>
+        <h1>Welcome to Amazing Cats!!</h1>
     </header>
 
     <nav>
-        <!-- You can place navigation links here -->
         {{#if logged_in}}
-        <a href="/">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/dashboard">Home</a>
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        {{!-- <a href="/login">Login</a> --}}
         {{/if}}
     </nav>
 
@@ -28,7 +27,7 @@
     </main>
 
     <footer>
-        <p>Thank you for considering adopting a cat!</p>
+        {{!-- <p>Thank you for considering adopting a cat!</p> --}}
     </footer>
 
     <!-- Render script for logged in users only -->

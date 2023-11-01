@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Cat, Shelter } = require('../../models'); // Assuming you have these models
+const { Cat } = require('../../models'); // Assuming you have these models
 // const fileUpload = require('express-fileupload');
 // const imgur = require('imgur');
 const { Model } = require('sequelize');

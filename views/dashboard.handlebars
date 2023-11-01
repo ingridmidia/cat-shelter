@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
     <h2>Available Cats</h2>
     <ul>
         {{#each cats}}
@@ -26,4 +26,17 @@
         </li>
         {{/each}}
     </ul>
-</section>
+</section> --}}
+
+<div>
+    {{#if logged_in}}
+    {{#each shelters as |shelter|}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{shelter.username}}</h5>
+            <a href="/shelter/{{shelter.id}}" class="btn btn-primary">View Cats</a>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
