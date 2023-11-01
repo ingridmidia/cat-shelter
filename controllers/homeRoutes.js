@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
 
