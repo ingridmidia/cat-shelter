@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelter Site</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<section>
+    <h2>Available Cats</h2>
+    <ul>
+        {{#each cats}}
+        <li>
+            <img src="{{this.imageURL}}" alt="{{this.name}}" />
+            <h3>{{this.name}}</h3>
+            <p>Age: {{this.age}}</p>
+            <p>Description: {{this.description}}</p>
+            <a href="/cats/{{this.id}}">View Details</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
 
-<body>
-    <h1>Under Construction</h1>
-</body>
-</html>
+<section>
+    <h2>Participating Shelters</h2>
+    <ul>
+        {{#each shelters}}
+        <li>
+            <h3>{{this.name}}</h3>
+            <address>
+                {{this.address}}
+            </address>
+            <a href="/shelters/{{this.id}}">More Info</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
