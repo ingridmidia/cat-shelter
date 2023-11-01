@@ -1,60 +1,56 @@
 const router = require('express').Router();
 const { Shelter } = require('../../models');
 
-// Creates a new shelter /api/shelter/
+// Create a new shelter
 router.post('/', async (req, res) => {
-    try {
-        const shelterData = await Shelter.create(req.body);
-
-        req.session.save(() => {
-            req.session.shelter_id = shelterData.id;
-            req.session.logged_in = true;
-
-            res.status(200).json(shelterData);
-        });
-    } catch (err) {
-        res.status(400).json(err);
-    }
+  try {
+    const shelterData = await Shelter.create(req.body);
+    // Optionally, you can generate a token or session here for automatic login
+    res.status(201).json(shelterData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-// Login route /api/shelter/login
+// Login route
 router.post('/login', async (req, res) => {
-    try {
-        const shelterData = await Shelter.findOne({ where: { username: req.body.username } });
+  try {
+    const { username, password } = req.body;
 
-        if (!shelterData) {
-            res.status(400).json({ message: 'Incorrect username or password, please try again' });
-            return;
-        }
+    const shelterData = await Shelter.findOne({ where: { username } });
 
-        const validPassword = await shelterData.checkPassword(req.body.password);
-
-        if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect username or password, please try again' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.shelter_id = shelterData.id;
-            req.session.logged_in = true;
-
-            res.json({ shelter: shelterData, message: 'You are now logged in!' });
-        });
-
-    } catch (err) {
-        res.status(400).json(err);
+    if (!shelterData) {
+      return res.status(400).json({ message: 'Incorrect username or password, please try again' });
     }
+
+    const validPassword = await shelterData.checkPassword(password);
+
+    if (!validPassword) {
+      return res.status(400).json({ message: 'Incorrect username or password, please try again' });
+    }
+
+    // Create a session or JWT token for authentication
+    req.session.save(() => {
+      req.session.shelter_id = shelterData.id;
+      req.session.logged_in = true;
+
+      return res.json({ shelter: shelterData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-// Logout route /api/shelter/logout
+// Logout route
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;
