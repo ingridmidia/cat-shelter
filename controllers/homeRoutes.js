@@ -3,12 +3,8 @@ const router = require('express').Router();
 const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
 
+// Render login page
 router.get('/', async (req, res) => {
-  res.render('login');
-});
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
@@ -17,26 +13,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Render dashboard with shelter locations
 router.get('/dashboard', async (req, res) => {
-  //   try {
-  //   // Fetch data from the database (e.g., cats and shelters) as needed
-  //   const catsData = await Cat.findAll();
-  //   const sheltersData = await Shelter.findAll();
-
-  //   // Map the data to plain objects for rendering
-  //   const cats = catsData.map((cat) => cat.get({ plain: true }));
-  //   const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
-
-  //   res.render('dashboard', {
-  //     cats,
-  //     shelters,
-  //     logged_in: req.session.logged_in,
-  //   });
-  // } catch (err) {
-  //   console.error(err);
-  //   res.status(500).json(err);
-  //   }
-
   try {
     const sheltersData = await Shelter.findAll();
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
@@ -46,20 +24,58 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-// Define other routes for the homepage as needed
-// For example, you can create additional routes for specific actions or pages on the homepage.
-
+// Render cats by shelter
 router.get("/shelter/:id", async (req, res) => {
-  const catsData = await Cat.findAll({
-    where: {
-      shelter_id: req.params.id
-    }
-  });
+  try {
 
-  const cats = catsData.map((cat) => cat.get({ plain: true }));
-  res.render("cats", {
-    cats, logged_in: req.session.logged_in,
-  });
+    const shelterData = await Shelter.findByPk(req.params.id);
+    const shelter = shelterData.get({ plain: true });
+
+    const catsData = await Cat.findAll({
+      where: {
+        shelter_id: req.params.id
+      }
+    });
+    if (!catsData) {
+      console.log(`Shelter with ID ${req.params.id} not found`);
+      res.status(404).end();
+      return;
+    }
+    const cats = catsData.map((cat) => cat.get({ plain: true }));
+    res.render("myShelter", {
+      cats, shelter, logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).end();
+  }
+});
+
+// Render a cat
+router.get('/cat/:id', async (req, res) => {
+  try {
+    const catData = await Cat.findByPk(req.params.id);
+
+    if (!catData) {
+      console.log(`Cat with ID ${req.params.id} not found`);
+      res.status(404).end();
+      return;
+    }
+    const cat = catData.get({ plain: true });
+    res.render("cat", { cat, logged_in: req.session.logged_in });
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).end();
+  }
+});
+
+// Create new cat
+router.get("/cat/new/:id", async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect("login");
+  } else {
+    res.render("newCat", { logged_in: req.session.logged_in });
+  }
 });
 
 module.exports = router;
