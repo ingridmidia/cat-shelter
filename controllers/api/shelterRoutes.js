@@ -2,6 +2,73 @@ const express = require('express');
 const router = express.Router();
 const { Shelter } = require('../../models');
 
+// Handle the POST request to create a new shelter
+router.post('/', async (req, res) => {
+  try {
+    // Extract data from the request body
+    const { username, password } = req.body;
+
+    // Check if the username is already taken
+    const existingShelter = await Shelter.findOne({
+      where: { username },
+    });
+
+    if (existingShelter) {
+      return res.status(400).json({ message: 'Username already exists' });
+    }
+
+    // Create a new shelter record in the database
+    const newShelter = await Shelter.create({
+      username,
+      password, // Remember to hash the password before storing it in production
+    });
+
+    // Optionally, you can create a session or JWT token for automatic login
+      req.session.shelter_id = newShelter.id;
+      req.session.logged_in = true;
+    return res.json({ shelter: newShelter, message: 'Shelter registered and logged in!' });
+  }
+  catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+// router.get('/shelter', async (req, res) => {
+//   try {
+//     const allShelters = await Shelter.findAll();
+//     res.json(allShelters);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/shelter/:id', async (req, res) => {
+//   try {
+//     const cat = await Cat.findByPk(req.params.id, {
+//       include: [{ model: Shelter }],
+//     });
+//     if (!cat) {
+//       res.status(404).json({ message: 'No cat found with that ID!' });
+//       return;
+//     }
+//     res.json(cat.Shelter);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// // Create a new shelter
+// router.post('/shelter', async (req, res) => {
+//   try {
+//     const shelterData = await Shelter.create(req.body);
+//     // Optionally, you can generate a token or session here for automatic login
+//     res.status(201).json(shelterData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
 // Login route
 router.post('/login', async (req, res) => {
   try {

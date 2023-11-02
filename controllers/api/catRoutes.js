@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Cat } = require('../../models'); // Assuming you have these models
+const { Cat } = require('../../models');
 const fileUpload = require('express-fileupload');
 const imgur = require('imgur');
 const { Model } = require('sequelize');
@@ -21,7 +21,7 @@ const client = new ImgurClient({
   refreshToken: REFRESH_TOKEN,
 });
 
-// POST /api/cat/new
+// creates new cat
 router.post('/new', async (req, res) => {
   try {
     // Upload the cat's photo to Imgur
