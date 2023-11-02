@@ -6,7 +6,7 @@ async function addCat(event) {
     const age = document.getElementById("cat-age").value.trim();
     const description = document.getElementById("cat-description").value.trim();
     const photo = document.getElementById("cat-photo").value;
-    const shelter_id = urlData[urlData.length - 2];
+    const shelter_id = urlData[urlData.length - 1];
 
     if (name && breed && age && description && photo) {
         const response = await fetch("/api/cat/new", {

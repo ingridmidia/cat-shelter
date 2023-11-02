@@ -5,7 +5,7 @@ const { Cat } = require('../../models');
 const fileUpload = require('express-fileupload');
 const imgur = require('imgur');
 const { Model } = require('sequelize');
-const fs = require('fs')
+const fs = require("fs");
 
 router.use(fileUpload());
 
@@ -24,13 +24,14 @@ const client = new ImgurClient({
 
 
 // api/cat/new
-router.post('/new', async (req, res) => {
+router.post('/new/:id', async (req, res) => {
   try {
     const response = await client.upload({
       image: fs.createReadStream(req.body.photo),
       type: 'stream',
     });
     let imgurLink = response.data.link;
+
     const newCat = await Cat.create({
       "name": req.body.name,
       "breed": req.body.breed,
