@@ -4,6 +4,7 @@ const { Cat } = require('../../models'); // Assuming you have these models
 const fileUpload = require('express-fileupload');
 const imgur = require('imgur');
 const { Model } = require('sequelize');
+const fs = require('fs')
 
 router.use(fileUpload());
 
@@ -23,16 +24,27 @@ const client = new ImgurClient({
 // api/cat/new
 router.post('/new', async (req, res) => {
   try {
-    const newCat = await Cat.create(req.body);
-    res.status(201).json(newCat);
+
 
     const response = await client.upload({
-      image: createReadStream(req.body.image),
-      type: 'image',
+      image: fs.createReadStream(req.body.photo),
+      type: 'stream',
     });
+    let imgurLink = response.data.link;
+    const newCat = await Cat.create({
+      "name": req.body.name,
+      "breed": req.body.breed,
+      "age": req.body.age,
+      "description": req.body.description,
+      "photo": imgurLink,
+      "adoptable": req.body.adoptable,
+      "shelter_id": req.body.shelter_id
+    });
+    console.log(response.data, newCat);
+    res.status(201).json(newCat);
 
-    console.log(response.data);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -64,46 +76,46 @@ router.get('/:id', async (req, res) => {
 
 router.get('/shelter/:id', async (req, res) => {
   try {
-      const cat = await Cat.findByPk(req.params.id, {
-          include: [{ model: Shelter }]
-      });
-      if (!cat) {
-          res.status(404).json({ message: 'No cat found with that ID!' });
-          return;
-      }
-      res.json(cat.Shelter);
+    const cat = await Cat.findByPk(req.params.id, {
+      include: [{ model: Shelter }]
+    });
+    if (!cat) {
+      res.status(404).json({ message: 'No cat found with that ID!' });
+      return;
+    }
+    res.json(cat.Shelter);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 router.put('/adoptable/:id', async (req, res) => {
   try {
-      const cat = await Cat.update(
-          { isAdoptable: true }, // Mark as adoptable
-          { where: { id: req.params.id } }
-      );
-      if (!cat) {
-          res.status(404).json({ message: 'No cat found with that ID!' });
-          return;
-      }
-      res.json(cat);
+    const cat = await Cat.update(
+      { isAdoptable: true }, // Mark as adoptable
+      { where: { id: req.params.id } }
+    );
+    if (!cat) {
+      res.status(404).json({ message: 'No cat found with that ID!' });
+      return;
+    }
+    res.json(cat);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 router.delete('/:id', async (req, res) => {
-    try {
-        const cat = await Cat.destroy({
-            where: { id: req.params.id }
-        });
-        if (!cat) {
-            res.status(404).json({ message: 'No cat found with that ID!' });
-            return;
-        }
-        res.json({ message: 'Cat deleted!' });
-    } catch (err) {
-        res.status(500).json(err);
+  try {
+    const cat = await Cat.destroy({
+      where: { id: req.params.id }
+    });
+    if (!cat) {
+      res.status(404).json({ message: 'No cat found with that ID!' });
+      return;
     }
+    res.json({ message: 'Cat deleted!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
