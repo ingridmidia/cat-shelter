@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 // Render dashboard with shelter locations
 router.get('/dashboard', async (req, res) => {
   try {
+    console.log(req.session);
     const sheltersData = await Shelter.findAll();
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
     res.render("dashboard", { shelters, logged_in: req.session.logged_in });
