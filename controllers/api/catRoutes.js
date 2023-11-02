@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Cat } = require('../../models');
+
 const fileUpload = require('express-fileupload');
 const imgur = require('imgur');
 const { Model } = require('sequelize');
@@ -21,10 +22,10 @@ const client = new ImgurClient({
   refreshToken: REFRESH_TOKEN,
 });
 
-// creates new cat
+
+// api/cat/new
 router.post('/new', async (req, res) => {
   try {
-    // Upload the cat's photo to Imgur
     const response = await client.upload({
       image: fs.createReadStream(req.body.photo), // Read the photo file
       type: 'stream',
@@ -40,20 +41,69 @@ router.post('/new', async (req, res) => {
       "age": req.body.age,
       "description": req.body.description,
       "photo": imgurLink,
-      "adoptable": req.body.adoptable,
       "shelter_id": req.body.shelter_id
-    });
-
-    // Log the Imgur response data and the new cat record
+    })
     console.log(response.data, newCat);
-
-    // Respond with the newly created cat record
-    res.status(201).json(newCat);
-
+    res.status(201).json(newCat)
+    console.log("Imgur: " + imgurLink)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const allCats = await Cat.findAll();
+    res.json(allCats);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/shelter/:id', async (req, res) => {
+  try {
+      const cat = await Cat.findByPk(req.params.id, {
+          include: [{ model: Shelter }]
+      });
+      if (!cat) {
+          res.status(404).json({ message: 'No cat found with that ID!' });
+          return;
+      }
+      res.json(cat.Shelter);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+router.put('/adoptable/:id', async (req, res) => {
+  try {
+      const cat = await Cat.update(
+          { isAdoptable: true }, // Mark as adoptable
+          { where: { id: req.params.id } }
+      );
+      if (!cat) {
+          res.status(404).json({ message: 'No cat found with that ID!' });
+          return;
+      }
+      res.json(cat);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const cat = await Cat.destroy({
+            where: { id: req.params.id }
+        });
+        if (!cat) {
+            res.status(404).json({ message: 'No cat found with that ID!' });
+            return;
+        }
+        res.json({ message: 'Cat deleted!' });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;

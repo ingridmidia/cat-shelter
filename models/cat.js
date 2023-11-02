@@ -31,9 +31,6 @@ Cat.init(
             type: DataTypes.BLOB, 
             allowNull: true,
         },
-        adoptable: {
-            type: DataTypes.BOOLEAN, 
-        },
         shelter_id: {
             type: DataTypes.INTEGER,
             references: {
