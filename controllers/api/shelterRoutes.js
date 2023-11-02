@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Shelter } = require('../../models');
+const { Shelter, Cat } = require('../../models');
 
 // Handle the POST request to create a new shelter
 router.post('/', async (req, res) => {
@@ -43,9 +43,10 @@ router.post('/', async (req, res) => {
 //   }
 // });
 
-// router.get('/shelter/:id', async (req, res) => {
+// router.get('/:id', async (req, res) => {
 //   try {
-//     const cat = await Cat.findByPk(req.params.id, {
+//     const cat = await Cat.findAll(req.params.id, {
+
 //       include: [{ model: Shelter }],
 //     });
 //     if (!cat) {
@@ -57,6 +58,29 @@ router.post('/', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+router.get('/:id', async (req, res) => {
+  try {
+    const shelterData = await Shelter.findByPk(req.params.id);
+    const catsData = await Cat.findAll({
+      where: {
+        shelter_id: req.params.id
+      }
+    });
+    if (!shelterData) {
+      console.log(`Shelter with ID ${req.params.id} not found`);
+      res.status(404).end();
+      return;
+    }
+    res.json({
+      shelter: shelterData,
+      cats: catsData
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
 // // Create a new shelter
 // router.post('/shelter', async (req, res) => {

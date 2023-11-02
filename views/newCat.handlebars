@@ -1,4 +1,5 @@
-<form class="form add-cat-form">
+
+    <form action="">
         <label for="cat-name">Name: </label>
         <input id="cat-name" type="text">
         <label for="cat-breed">Breed: </label>
@@ -7,10 +8,7 @@
         <input id="cat-age" type="text">
         <label for="cat-description">Description: </label>
         <input id="cat-description" type="text">
-        <label for="cat-photo">Photo file: </label>
-        <input type="submit">
-         <input type="file" id="cat-photo" name="cat-photo">
-        <label for="adoptable">Is this cat adoptable: </label>
-        <input id="adoptable" type="checkbox">
-        <button id="add-cat-btn" class="btn btn-primary" type="submit">Add Cat</button>
+        <label for="cat-photo">Choose a photo:</label>
+<input type="file" id="cat-photo" name="cat-photo" accept=".jpg, .jpeg, .png" />
+        <button id="new-cat-submit">Submit</button>
     </form>

@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
     res.redirect('/dashboard');
     return;
   }
-
   res.render('login');
 });
 
@@ -72,6 +71,7 @@ router.get('/cat/:id', async (req, res) => {
 
 // Create new cat
 router.get("/cat/new/:id", async (req, res) => {
+
   if (!req.session.logged_in) {
     res.redirect("login");
   } else {
