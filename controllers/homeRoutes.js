@@ -18,7 +18,7 @@ router.get('/dashboard', async (req, res) => {
   try {
     const sheltersData = await Shelter.findAll();
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
-    res.render("dashboard", { shelters, logged_in: req.session.logged_in, });
+    res.render("dashboard", { shelters, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
