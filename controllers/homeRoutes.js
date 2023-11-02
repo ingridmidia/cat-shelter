@@ -28,10 +28,11 @@ router.get('/dashboard', async (req, res) => {
 // Render cats by shelter
 router.get("/shelter/:id", async (req, res) => {
   try {
-
+    // Find shelter data by ID
     const shelterData = await Shelter.findByPk(req.params.id);
     const shelter = shelterData.get({ plain: true });
 
+    // Find cats at the specified shelter
     const catsData = await Cat.findAll({
       where: {
         shelter_id: req.params.id
@@ -55,6 +56,7 @@ router.get("/shelter/:id", async (req, res) => {
 // Render a cat
 router.get('/cat/:id', async (req, res) => {
   try {
+    // Find cat data by ID
     const catData = await Cat.findByPk(req.params.id);
 
     if (!catData) {

@@ -1,17 +1,10 @@
-{{#if logged_in}}
 <section class="cat">
+  <img src="" alt="{{cat.description}}">
   <div class="cat-details">
     <h3>{{cat.name}}</h3>
-    {{!-- <img src="" alt="{{cat.description}}"> --}}
-    <p>PHOTO</p>
-    <p>Breed: {{cat.breed}}</p>
-    <p>Age: {{cat.age}}</p>
-    <p>{{cat.description}}</p>
-    {{#if cat.adoptable}}
-    <p>Currently available for adoption.</p>
-    {{else}}
-    <p>Adopted.</p>
-    {{/if}}
+    <p>{{cat.breed}}</p>
+    <p>{{cat.age}}</p>
+    <p>{{cat.descirption}}</p>
+    <p>Currently {{cat.adoptable}} at {{shelter.name}}</p>
   </div>
 </section>
-{{/if}}
