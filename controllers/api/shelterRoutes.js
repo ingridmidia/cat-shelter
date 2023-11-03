@@ -59,6 +59,7 @@ router.post('/', async (req, res) => {
 //   }
 // });
 
+// Not being used
 router.get('/:id', async (req, res) => {
   try {
     const shelterData = await Shelter.findByPk(req.params.id);
@@ -129,7 +130,8 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
-    res.status(404).end();
+    // res.status(404).end();
+    res.redirect("/");
   }
 });
 
