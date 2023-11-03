@@ -17,14 +17,16 @@
         {{#if logged_in}}
         <a href="/dashboard">Home</a>
         <button class="no-button" id="logout">Logout</button>
-        <script src="/js/logout.js"></script>
         {{/if}}
     </nav>
 
     <main>
         {{{body}}}
     </main>
-
+    <div>
+        {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+        
+    </div>
 </body>
-
-</html>
