@@ -26,10 +26,10 @@ This site is not designed to be a customer facing site but rather a resource for
 ## Credits
 The team for this project consisted of:
 
-Eric Olson - (https://github.com/ericolson1977)
-Ingrid Miranda - (https://github.com/ingridmidia)
-Chris Kirkley - (https://github.com/Peaky00)
-Caroline Hartwell - (https://github.com/chart099)
+- Eric Olson - (https://github.com/ericolson1977)
+- Ingrid Miranda - (https://github.com/ingridmidia)
+- Chris Kirkley - (https://github.com/Peaky00)
+- Caroline Hartwell - (https://github.com/chart099)
 
 Technologies use were:
 
