@@ -1,4 +1,3 @@
-// const express = require('express'); not being used
 const router = require('express').Router();
 const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
@@ -15,7 +14,6 @@ router.get('/', async (req, res) => {
 // Render dashboard with shelter locations
 router.get('/dashboard', async (req, res) => {
   try {
-    console.log(req.session);
     const sheltersData = await Shelter.findAll();
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
     res.render("dashboard", { shelters, logged_in: req.session.logged_in });
@@ -73,11 +71,10 @@ router.get('/cat/:id', async (req, res) => {
 
 // Render page to add a new cat
 router.get("/cat/new/:id", async (req, res) => {
-
   if (!req.session.logged_in) {
     res.redirect("/login");
   } else {
-    res.render("newCat", { logged_in: req.session.logged_in, shelter_id:req.params.id });
+    res.render("newCat", { logged_in: req.session.logged_in, shelter_id: req.params.id });
   }
 });
 

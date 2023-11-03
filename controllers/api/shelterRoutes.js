@@ -24,8 +24,8 @@ router.post('/', async (req, res) => {
     });
 
     // Optionally, you can create a session or JWT token for automatic login
-      req.session.shelter_id = newShelter.id;
-      req.session.logged_in = true;
+    req.session.shelter_id = newShelter.id;
+    req.session.logged_in = true;
     return res.json({ shelter: newShelter, message: 'Shelter registered and logged in!' });
   }
   catch (err) {
@@ -34,32 +34,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// router.get('/shelter', async (req, res) => {
-//   try {
-//     const allShelters = await Shelter.findAll();
-//     res.json(allShelters);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const cat = await Cat.findAll(req.params.id, {
-
-//       include: [{ model: Shelter }],
-//     });
-//     if (!cat) {
-//       res.status(404).json({ message: 'No cat found with that ID!' });
-//       return;
-//     }
-//     res.json(cat.Shelter);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// Not being used
+// Get shelter and associated cats by ID - GET /api/shelters/:id
 router.get('/:id', async (req, res) => {
   try {
     const shelterData = await Shelter.findByPk(req.params.id);
@@ -82,17 +57,6 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// // Create a new shelter
-// router.post('/shelter', async (req, res) => {
-//   try {
-//     const shelterData = await Shelter.create(req.body);
-//     // Optionally, you can generate a token or session here for automatic login
-//     res.status(201).json(shelterData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 // Login route
 router.post('/login', async (req, res) => {
@@ -138,7 +102,6 @@ router.post('/logout', (req, res) => {
       res.status(204).end(); // Respond with a success status code
     });
   } else {
-    // res.status(404).end();
     res.redirect("/");
   }
 });

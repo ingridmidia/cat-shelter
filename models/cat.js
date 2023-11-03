@@ -28,7 +28,7 @@ Cat.init(
             allowNull: false,
         },
         photo: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: true,
         },
         shelter_id: {
