@@ -24,7 +24,7 @@
         "gender": "Male",
         "description": "Leo is a healthy cat, and he's been neutered. You can expect many happy and healthy years with him.",
         "photo": "/photos/leo.jpeg",
-        "shelter_id": "2"
+        "shelter_id": "1"
     },
     {
         "name": "Oliver",
@@ -33,7 +33,7 @@
         "gender": "Male",
         "description": "Oliver is a people-oriented cat and gets along well with children and adults. He's friendly and sociable, making him an excellent companion for families.",
         "photo": "/photos/oliver.jpeg",
-        "shelter_id": "2"
+        "shelter_id": "1"
     },
     {
         "name": "Luna",
@@ -42,7 +42,7 @@
         "gender": "Female",
         "description": "Luna is a clever cat, quick to learn and adapt. She can be taught tricks and is always up for a stimulating puzzle toy.",
         "photo": "/photos/luna.jpeg",
-        "shelter_id": "3"
+        "shelter_id": "2"
     },
     {
         "name": "Rocky",
@@ -51,6 +51,168 @@
         "gender": "Male",
         "description": "Rocky is a sweet and loving cat who enjoys being near his humans. He'll curl up next to you for a cozy cuddle session and is sure to warm your heart with his purrs.",
         "photo": "/photos/rocky.jpeg",
+        "shelter_id": "2"
+    },
+    {
+        "name": "Zoe",
+        "breed": "Domestic Shorthair",
+        "age": 5,
+        "gender": "Female",
+        "description": "Zoe is a mature cat and is the perfect companion for anyone seeking a calm and loving pet.",
+        "photo": "/photos/zoe.jpeg",
+        "shelter_id": "2"
+    },
+    {
+        "name": "Misty",
+        "breed": "Domestic Shorthair",
+        "age": 4,
+        "gender": "Female",
+        "description": "Misty is a beautiful cat with sleek, soft black fur and captivating green eyes. She has a sweet and gentle disposition that is sure to steal your heart.",
+        "photo": "/photos/misty.jpeg",
+        "shelter_id": "2"
+    },
+    {
+        "name": "Snowball",
+        "breed": "Domestic Medium Hair",
+        "age": 6,
+        "gender": "Male",
+        "description": "Snowball is a stunning, all-white cat with the softest fur you've ever touched, and a pair of brilliant green eyes that will captivate your heart.",
+        "photo": "/photos/snowball.jpeg",
         "shelter_id": "3"
+    },
+    {
+        "name": "Hazel",
+        "breed": "Domestic Shorthair",
+        "age": 4,
+        "gender": "Female",
+        "description": "Hazel radiates a delightful mix of playfulness and affection. With her charming personality, she'll make the perfect addition to any loving family.",
+        "photo": "/photos/hazel.jpeg",
+        "shelter_id": "3"
+    },
+    {
+        "name": "Cookie",
+        "breed": "Domestic Shorthair",
+        "age": 5,
+        "gender": "Male",
+        "description": "Cookie enjoys the simple pleasures in life, such as lounging in a sunny spot by the window, watching the world go by, and receiving gentle head scratches.",
+        "photo": "/photos/cookie.jpeg",
+        "shelter_id": "3"
+    },
+    {
+        "name": "Noodle",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Male",
+        "description": "Noodle is a young and energetic feline and he's ready to bring endless joy and excitement to your life. His playful antics will keep you entertained for hours on end.",
+        "photo": "/photos/noodle.jpeg",
+        "shelter_id": "3"
+    },
+    {
+        "name": "Peaches",
+        "breed": "Domestic Shorthair",
+        "age": 3,
+        "gender": "Female",
+        "description": "Peaches is the perfect companion for anyone seeking a loyal and easygoing pet. She has a calm and gentle disposition, and she thrives on human companionship.",
+        "photo": "/photos/peaches.jpeg",
+        "shelter_id": "4"
+    },
+    {
+        "name": "Pudding",
+        "breed": "Domestic Shorthair",
+        "age": 1,
+        "gender": "Male",
+        "description": "Pudding is an adorable and playful young cat who is eagerly waiting to find his forever home. His bright and inquisitive eyes are filled with the promise of many joyful adventures.",
+        "photo": "/photos/pudding.jpeg",
+        "shelter_id": "4"
+    },
+    {
+        "name": "Bongo",
+        "breed": "Domestic Shorthair",
+        "age": 4,
+        "gender": "Male",
+        "description": "Bogo is a loving and affectionate cat. He enjoys cuddles and will eagerly purr as you stroke his soft fur. He's the kind of cat that will eagerly snuggle with you on the couch, providing you with warmth and comfort.",
+        "photo": "/photos/bongo.jpeg",
+        "shelter_id": "4"
+    },
+    {
+        "name": "Cheddar",
+        "breed": "Domestic Longhair",
+        "age": 8,
+        "gender": "Male",
+        "description": "Cheddar is a wise and charming cat who is searching for a loving forever home to spend his golden years. Cheddar's vibrant orange coat and the twinkle in his eyes tell the story of a cat who's seen the world and is ready to share his wisdom with you.",
+        "photo": "/photos/cheddar.jpeg",
+        "shelter_id": "4"
+    },
+    {
+        "name": "Marshmallow",
+        "breed": "Domestic Medium Hair",
+        "age": 5,
+        "gender": "Male",
+        "description": "Marshmallow is refined feline with a calm and gentle disposition. He's the perfect companion for someone seeking a laid-back and affectionate pet. He enjoys quiet moments by your side, soaking up the warmth of your company.",
+        "photo": "/photos/marshmallow.jpeg",
+        "shelter_id": "5"
+    },
+    {
+        "name": "Jigsaw",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Female",
+        "description": "Jigsaw is a domestic shorthair with a striking and intricate calico coat that's as captivating as her name. Her big, expressive eyes hold the promise of many loving moments.",
+        "photo": "/photos/jigsaw.jpeg",
+        "shelter_id": "5"
+    },
+    {
+        "name": "Velvet",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Female",
+        "description": "Velvet is the perfect balance between youthful energy and maturity. She's a versatile companion, ready to play and cuddle with equal enthusiasm. She loves to engage in playtime, chasing after toys, and showing off her agility.",
+        "photo": "/photos/velvet.jpeg",
+        "shelter_id": "5"
+    },
+    {
+        "name": "Lisa",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Female",
+        "description": "Lisa is an adaptable and loving companion, ready to enjoy playful moments and offer you comfort and affection. She loves interactive play, chasing toys, and lounging in sunny spots, making her a delightful and versatile addition to any family.",
+        "photo": "/photos/lisa.jpeg",
+        "shelter_id": "5"
+    },
+    {
+        "name": "Midnight",
+        "breed": "Domestic Longhair",
+        "age": 4,
+        "gender": "Male",
+        "description": "Midnight is a stunning and mysterious feline who is ready to bring a touch of magic and elegance into your life. Midnight is a sleek and regal black cat, with a coat as dark as the night and a personality that's equally captivating.",
+        "photo": "/photos/midnight.jpeg",
+        "shelter_id": "6"
+    },
+    {
+        "name": "Caramel",
+        "breed": "Domestic Shorthair",
+        "age": 2,
+        "gender": "Female",
+        "description": "Caramel is a delightful and charming cat who is eagerly seeking a loving forever home. Caramel's coat showcases a beautiful blend of soft orange and cream shades, reminiscent of the sweet and comforting hues of caramel.",
+        "photo": "/photos/caramel.jpeg",
+        "shelter_id": "6"
+    },
+    {
+        "name": "Maggie",
+        "breed": "Domestic Shorthair",
+        "age": 9,
+        "gender": "Female",
+        "description": "Maggie is a classic tabby cat, adorned with elegant white accents, reflecting her timeless beauty and grace. Her wise and gentle eyes are windows to a wealth of experience and affection.",
+        "photo": "/photos/maggie.jpeg",
+        "shelter_id": "6"
+    },
+    {
+        "name": "Mochi",
+        "breed": "Domestic Shorthair",
+        "age": 3,
+        "gender": "Male",
+        "description": "Mochi is a loving and affectionate cat. He adores cuddling and will readily curl up in your lap, purring contentedly as he shares quiet moments with you. His presence is sure to bring warmth and grace to your life.",
+        "photo": "/photos/mochi.jpeg",
+        "shelter_id": "6"
     }
 ]
