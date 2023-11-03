@@ -43,11 +43,13 @@ main {
     width: 25rem;
     height: 10rem;
     align-items: center;
+   
 }
 
 #login-area > h2{
     font-size: 1.5rem;
     margin-bottom: 15px;
+    font-family: 'Lilita One', sans-serif;
 }
 
 .form-group{
