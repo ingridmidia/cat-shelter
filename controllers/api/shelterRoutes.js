@@ -59,6 +59,7 @@ router.post('/', async (req, res) => {
 //   }
 // });
 
+// Not being used
 router.get('/:id', async (req, res) => {
   try {
     const shelterData = await Shelter.findByPk(req.params.id);
@@ -137,8 +138,8 @@ router.post('/logout', (req, res) => {
       res.status(204).end(); // Respond with a success status code
     });
   } else {
-    // If no user is logged in, respond with a "Not Found" status code
-    res.status(404).end();
+    // res.status(404).end();
+    res.redirect("/");
   }
 });
 

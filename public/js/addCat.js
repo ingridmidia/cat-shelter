@@ -1,3 +1,6 @@
+// we don't need this file
+
+
 async function addCat(event) {
     event.preventDefault();
 
@@ -6,12 +9,13 @@ async function addCat(event) {
     const age = document.getElementById("cat-age").value.trim();
     const description = document.getElementById("cat-description").value.trim();
     const photo = document.getElementById("cat-photo").value;
-    const shelter_id = urlData[urlData.length - 2];
+    const urlData = window.location.toString().split('/');
+    const shelter_id = urlData[urlData.length - 1];
 
     if (name && breed && age && description && photo) {
-        const response = await fetch("/api/cat/new", {
+        const response = await fetch(`/api/cat/new/${shelter_id}`, {
             method: "POST",
-            body: JSON.stringify({ name, breed,  age,  description, photo, shelter_id }),
+            body: JSON.stringify({ name, breed, age, description, photo }),
             headers: { "Content-Type": "application/json" },
         });
 
@@ -23,4 +27,4 @@ async function addCat(event) {
     }
 }
 
-document.getElementById("new-cat-submit").addEventListener("submit", addCat);
+document.getElementById("new-cat-form").addEventListener("submit", addCat);
