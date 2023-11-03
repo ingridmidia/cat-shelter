@@ -1,7 +1,7 @@
 :root {
-    --peony: #f5BFE0;
-    --mint: #BFF5CE;
-    --soft-green: #DAF5BF;
+    --light-purple: #E7BAEF;
+    --mint: #C1F0BB;
+    --soft-green: #EEF0BB;
     margin: 0;
     padding: 0;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: var(--peony);
+    background-color: var(--light-purple);
     width: 95%;
     height: 15vh;
     border-radius: 0 0 10px 10px;
@@ -36,7 +36,6 @@ main {
 
 #login-area {
     text-align: center;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,3 +56,26 @@ main {
     justify-content: space-between;
 }
 
+.cat-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50rem;
+    height: 30rem;
+    border: 1px solid red;
+
+}
+
+.cat-card {
+    width: 12rem;
+    height: 13rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cat-card > img{
+    width: 10rem;
+}
