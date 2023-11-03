@@ -8,7 +8,11 @@ document.addEventListener('click', async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        if (document.referrer) {
+          document.location.replace(document.referrer);
+        } else {
+          document.location.replace('/dashboard');
+        }
       } else {
         alert('Failed to delete cat');
       }
