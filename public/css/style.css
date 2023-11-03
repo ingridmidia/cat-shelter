@@ -55,6 +55,11 @@ main {
     display: flex;
     justify-content: space-between;
 }
+#shelter-page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 .cat-card-container {
     display: flex;
@@ -63,7 +68,6 @@ main {
     width: 50rem;
     height: 30rem;
     border: 1px solid red;
-
 }
 
 .cat-card {
@@ -77,5 +81,5 @@ main {
 }
 
 .cat-card > img{
-    width: 10rem;
+    width: 80%;
 }

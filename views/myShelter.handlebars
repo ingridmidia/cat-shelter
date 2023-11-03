@@ -1,17 +1,16 @@
-<div>
+<div id= "shelter-page">
     {{#if logged_in}}
     <h1>{{shelter.username}}</h1>
     <div class="cat-card-container">
     {{#each cats as |cat|}}
     <div  class="cat-card">
-        <div class="cat-card">
             <img src="{{cat.photo}}" alt="cat-photo">
             <a href="/cat/{{cat.id}}" class="card-title">{{cat.name}}</a>
-        </div>
     </div>
     {{/each}}
     </div>
 
-    <a href="/cat/new/{{shelter.id}}" id="add-cat-button">Add Cat</a>
+        <a href="/cat/new/{{shelter.id}}" id="add-cat-button">Add Cat</a>
+ 
     {{/if}}
 </div>
