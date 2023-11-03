@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            alert('Please make sure username is unique and password is at least 8 characters long');
         }
     }
 };
