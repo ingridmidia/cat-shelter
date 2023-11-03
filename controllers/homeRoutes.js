@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   res.render('login');
 });
 
-// Render dashboard with shelter locations
+// Render dashboard with shelter locations and form to add a new location
 router.get('/dashboard', async (req, res) => {
   try {
     const sheltersData = await Shelter.findAll();
