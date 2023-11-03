@@ -1,16 +1,14 @@
 [
-    {
-      "username": "AC-Loop",
-      "password": "password12345"
-    },
-    {
-      "username": "AC-Logan Square",
-      "password": "password12345"
-      
-    },
-    {
-      "username": "AC-Pilsen",
-      "password": "password12345"
-    }
-  ]
-  
+  {
+    "username": "AC-Loop",
+    "password": "password12345"
+  },
+  {
+    "username": "AC-Logan Square",
+    "password": "password12345"
+  },
+  {
+    "username": "AC-Pilsen",
+    "password": "password12345"
+  }
+]

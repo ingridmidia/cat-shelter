@@ -13,7 +13,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  
+
   const cats = await Cat.bulkCreate(catData);
 
   process.exit(0);
