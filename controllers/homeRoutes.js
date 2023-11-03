@@ -1,4 +1,3 @@
-// const express = require('express'); not being used
 const router = require('express').Router();
 const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
@@ -12,10 +11,9 @@ router.get('/', async (req, res) => {
   res.render('login');
 });
 
-// Render dashboard with shelter locations
+// Render dashboard with shelter locations and form to add a new location
 router.get('/dashboard', async (req, res) => {
   try {
-    console.log(req.session);
     const sheltersData = await Shelter.findAll();
     const shelters = sheltersData.map((shelter) => shelter.get({ plain: true }));
     res.render("dashboard", { shelters, logged_in: req.session.logged_in });
@@ -27,10 +25,11 @@ router.get('/dashboard', async (req, res) => {
 // Render cats by shelter
 router.get("/shelter/:id", async (req, res) => {
   try {
-
+    // Find shelter data by ID
     const shelterData = await Shelter.findByPk(req.params.id);
     const shelter = shelterData.get({ plain: true });
 
+    // Find cats at the specified shelter
     const catsData = await Cat.findAll({
       where: {
         shelter_id: req.params.id
@@ -54,6 +53,7 @@ router.get("/shelter/:id", async (req, res) => {
 // Render a cat
 router.get('/cat/:id', async (req, res) => {
   try {
+    // Find cat data by ID
     const catData = await Cat.findByPk(req.params.id);
 
     if (!catData) {
@@ -71,11 +71,10 @@ router.get('/cat/:id', async (req, res) => {
 
 // Render page to add a new cat
 router.get("/cat/new/:id", async (req, res) => {
-
   if (!req.session.logged_in) {
     res.redirect("/login");
   } else {
-    res.render("newCat", { logged_in: req.session.logged_in, shelter_id:req.params.id });
+    res.render("newCat", { logged_in: req.session.logged_in, shelter_id: req.params.id });
   }
 });
 
