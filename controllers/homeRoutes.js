@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express'); not being used
 const router = require('express').Router();
 const Cat = require('../models/cat');
 const Shelter = require('../models/shelter');
@@ -69,13 +69,13 @@ router.get('/cat/:id', async (req, res) => {
   }
 });
 
-// Create new cat
+// Render page to add a new cat
 router.get("/cat/new/:id", async (req, res) => {
 
   if (!req.session.logged_in) {
-    res.redirect("login");
+    res.redirect("/login");
   } else {
-    res.render("newCat", { logged_in: req.session.logged_in });
+    res.render("newCat", { logged_in: req.session.logged_in, shelter_id:req.params.id });
   }
 });
 

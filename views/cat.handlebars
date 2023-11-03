@@ -2,16 +2,10 @@
 <section class="cat">
   <div class="cat-details">
     <h3>{{cat.name}}</h3>
-    {{!-- <img src="" alt="{{cat.description}}"> --}}
     <img src="{{cat.photo}}" alt="cat"></p>
     <p>Breed: {{cat.breed}}</p>
     <p>Age: {{cat.age}}</p>
     <p>{{cat.description}}</p>
-    {{#if cat.adoptable}}
-    <p>Currently available for adoption.</p>
-    {{else}}
-    <p>Adopted.</p>
-    {{/if}}
   </div>
 </section>
 {{/if}}
