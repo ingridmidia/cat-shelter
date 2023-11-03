@@ -14,5 +14,4 @@ module.exports = {
     return value ? 'Yes' : 'No';
   },
 
-  // Any other helpers you might find useful...
 };
