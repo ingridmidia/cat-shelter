@@ -34,30 +34,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get shelter and associated cats by ID - GET /api/shelters/:id
-router.get('/:id', async (req, res) => {
-  try {
-    const shelterData = await Shelter.findByPk(req.params.id);
-    const catsData = await Cat.findAll({
-      where: {
-        shelter_id: req.params.id
-      }
-    });
-    if (!shelterData) {
-      console.log(`Shelter with ID ${req.params.id} not found`);
-      res.status(404).end();
-      return;
-    }
-    res.json({
-      shelter: shelterData,
-      cats: catsData
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
-
 // Login route
 router.post('/login', async (req, res) => {
   try {

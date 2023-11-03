@@ -47,52 +47,6 @@ router.post('/new/:id', async (req, res) => {
   }
 });
 
-// The following routes from 58 to 95 appear to be unused, and they can be removed or modified as needed.
-
-// Get all cats - GET /api/cat
-router.get('/', async (req, res) => {
-  try {
-    const allCats = await Cat.findAll();
-    res.json(allCats);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Get cat by ID - GET /api/cat/shelter/:id
-router.get('/shelter/:id', async (req, res) => {
-  try {
-    const cat = await Cat.findByPk(req.params.id, {
-      include: [{ model: Shelter }]
-    });
-    if (!cat) {
-      res.status(404).json({ message: 'No cat found with that ID!' });
-      return;
-    }
-    res.json(cat.Shelter);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Mark cat as adoptable - PUT /api/cat/adoptable/:id
-router.put('/adoptable/:id', async (req, res) => {
-  try {
-    const cat = await Cat.update(
-      { isAdoptable: true }, // Mark as adoptable
-      { where: { id: req.params.id } }
-    );
-    if (!cat) {
-      res.status(404).json({ message: 'No cat found with that ID!' });
-      return;
-    }
-    res.json(cat);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// TODO: connect this route with a delete button on the UI
 // Delete cat by ID - DELETE /api/cat/:id
 router.delete('/:id', async (req, res) => {
   try {
