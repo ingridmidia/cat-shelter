@@ -21,11 +21,21 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
     font-family: 'Lilita One', sans-serif;
 }
 
 header > h1 {
     font-size: 3rem;
+}
+
+nav{
+    display: fixed;
+    margin-top: 50px;
+    right: 0px;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
 }
 
 main {
@@ -89,3 +99,40 @@ main {
 .cat-card > img{
     width: 80%;
 }
+
+.shelter-card {
+    border: 1px solid black;
+    height: 100px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#shelter-area{ 
+    margin-right: 50px;
+}
+
+.sign-up-area {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.new-location-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sign-up-area > button {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

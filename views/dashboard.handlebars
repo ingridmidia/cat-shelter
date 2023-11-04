@@ -1,21 +1,19 @@
-<div>
+<div id= "shelter-area">
     {{#if logged_in}}
     {{#each shelters as |shelter|}}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
+    <div class="card shelter-card" style="width: 18rem;">
+        <div class=>
             <h5 class="card-title">{{shelter.username}}</h5>
-            <a href="/shelter/{{shelter.id}}" class="btn btn-primary">View Location</a>
+            <a href="/shelter/{{shelter.id}}" class="view-location">View Location</a>
         </div>
     </div>
     {{/each}}
     {{/if}}
-
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="sign-up-area">
         <h2>Add New Location</h2>
 
-        <form class="form new-location-form">
+        <form class="new-location-form">
             <div class="form-group">
                 <label for="username-signup">Username:</label>
                 <input class="form-input" type="text" id="username-signup" />
@@ -24,11 +22,9 @@
                 <label for="password-signup">Password:</label>
                 <input class="form-input" type="password" id="password-signup" />
             </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">Sign Up</button>
-            </div>
+                
         </form>
-    </div>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
 </div>
 <script src="./js/newLocation.js"></script>
 
