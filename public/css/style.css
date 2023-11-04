@@ -11,6 +11,8 @@ body {
     justify-content: center;
 }
 
+
+
 header {
     background-color: var(--light-purple);
     width: 95%;
@@ -36,6 +38,13 @@ nav{
     width: 100%;
     text-align: right;
     margin-right: 10px;
+}
+
+nav > a {
+    color: black;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 18px;
 }
 
 main {
@@ -83,7 +92,7 @@ main {
     justify-content: space-around;
     width: 50rem;
     height: 30rem;
-    border: 1px solid red;
+    flex-wrap: wrap;
 }
 
 .cat-card {
@@ -94,10 +103,26 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    border-radius: 5px;
 }
 
 .cat-card > img{
-    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+#shelter-page > h1{
+    font-family: 'Lilita One', sans-serif;
+    font-size: 30px;
+}
+
+#shelter-page > button {
+    background-color: var(--mint);
+    width: 25%;
+    margin: 5px auto;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
 }
 
 .shelter-card {
@@ -107,14 +132,26 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+ h5 {
+    font-size: 20px;
+    font-family: 'Lilita One', sans-serif;
 }
 
 #shelter-area{ 
-    margin-right: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+    justify-content: center;
 }
 
 .sign-up-area {
     display: flex;
+    width: 50%;
     justify-content: center;
     flex-direction: column;
     text-align: center;
@@ -122,17 +159,74 @@ main {
 
 .new-location-form {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+
 }
 .sign-up-area > button {
-    width: 50%;
-    margin: 0 auto;
+    width: 25%;
+    margin: 15px auto;
 }
 
-.form-group {
+.sign-up-area > h2 {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.new-location{
+    width: 60%;
+}
+
+.location-username, .location-password {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
+.add-cat-form {
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+
+}
+
+.add-cat-form > button {
+    background-color: var(--mint);
+    width: 50%;
+    margin: 5px auto;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+
+}
+
+#cat-page {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 75%;
+}
+
+.cat-details > h3 {
+    font-size: 28px;
+    font-family: 'Lilita One', sans-serif;
+}
+
+#cat-photo-caption {
+    margin-top: 20px;
+}
+
+.cat-details > img  {
+    width: 300px;
+}
+
+.cat-details > button {
+    margin-top: 50px;
+}
+
+#add-cat-button{
+    text-decoration: none;
+    color: black;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+}

@@ -1,11 +1,13 @@
 {{#if logged_in}}
-<section class="cat">
+<section id="cat-page">
   <div class="cat-details">
     <h3>{{cat.name}}</h3>
     <img src="{{cat.photo}}" alt="cat"></p>
+    <div id = "cat-photo-caption">
     <p>Breed: {{cat.breed}}</p>
     <p>Age: {{cat.age}}</p>
     <p>{{cat.description}}</p>
+    </div>
     <button class="btn btn-sm btn-danger" data-id="{{cat.id}}">With a New Family!</button>
   </div>
 </section>
