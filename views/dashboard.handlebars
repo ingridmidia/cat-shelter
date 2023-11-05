@@ -2,9 +2,10 @@
     {{#if logged_in}}
     {{#each shelters as |shelter|}}
     <div class="card shelter-card" style="width: 18rem;">
-        <div class=>
+        <div>
+            {{!-- <img src="/public/photos/image_480.png" alt="AC Logo"> --}}
             <h5 class="card-title">{{shelter.username}}</h5>
-            <a href="/shelter/{{shelter.id}}" class="view-location">View Location</a>
+            <a href="/shelter/{{shelter.id}}" class="view-location">View Available Cats</a>
         </div>
     </div>
     {{/each}}

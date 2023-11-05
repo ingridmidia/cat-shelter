@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lilita+One&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lilita+One&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <h1>Welcome to Amazing Cats!!</h1>
-    <nav>
-        {{#if logged_in}}
-        <a href="/dashboard">Home</a>
-        <a class="no-button" id="logout">Logout</a>
-        {{/if}}
-    </nav>
+        <nav>
+            {{#if logged_in}}
+            <a href="/dashboard">Home</a>
+            <a class="no-button" id="logout">Logout</a>
+            {{/if}}
+        </nav>
     </header>
 
     <main>
@@ -32,6 +34,13 @@
         {{#if logged_in}}
         <script src="/js/logout.js"></script>
         {{/if}}
-        
+
     </div>
+    <footer>
+        <ul class="contact">
+            <li>312-555-1234</li>
+            <li><a href="mailto:admin@amazingcats.com">admin@amazingcats.com</a></li>
+            <li>1234 Main St, Chicago, IL 60606</li>
+        </ul>
+    </footer>
 </body>
