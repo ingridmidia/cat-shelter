@@ -12,8 +12,6 @@ body {
     justify-content: center;
 }
 
-
-
 header {
     background-color: var(--light-purple);
     width: 95%;
@@ -145,6 +143,11 @@ main {
     text-align: center;
 }
 
+#shelter-logo {
+    height: 50px;
+    margin: 0 auto;
+}
+
 h5 {
     font-size: 20px;
     font-family: 'Lilita One', sans-serif;
@@ -232,6 +235,7 @@ h5 {
 .cat-details>img {
     width: 300px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 .cat-details>button {

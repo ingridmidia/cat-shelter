@@ -3,7 +3,7 @@
     {{#each shelters as |shelter|}}
     <div class="card shelter-card" style="width: 18rem;">
         <div>
-            {{!-- <img src="/public/photos/image_480.png" alt="AC Logo"> --}}
+            <img src="/photos/logo.png" alt="AC Logo" id="shelter-logo">
             <h5 class="card-title">{{shelter.username}}</h5>
             <a href="/shelter/{{shelter.id}}" class="view-location">View Available Cats</a>
         </div>
@@ -26,7 +26,7 @@
             </div>
             </div>
         </form>
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn" type="submit">Add</button>
 </div>
 <script src="./js/newLocation.js"></script>
 
