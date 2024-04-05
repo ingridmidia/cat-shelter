@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Cat } = require('../../models');
+const fs = require("fs");
 const fileUpload = require('express-fileupload');
 router.use(fileUpload());
 
@@ -20,16 +21,23 @@ const client = new ImgurClient({
 
 // Create a new cat with a photo - POST /api/cat/new/:id
 router.post('/new/:id', async (req, res) => {
+  console.log(req);
   try {
     // Upload the photo to Imgur
     const response = await client.upload({
       image: req.files.photo.data,
+      // image: fs.createReadStream('./public/photos/bongo.jpeg'),
       type: 'stream',
     });
     
     // Get the Imgur link to the uploaded photo
+    if(response.success === false) {
+      console.log(response);
+      return res.status(500).send("Server error");
+    }
+    
     let imgurLink = response.data.link;
-
+    
     // Create a new cat record in the database with the uploaded photo link
     const newCat = await Cat.create({
       "name": req.body.name,
@@ -43,6 +51,7 @@ router.post('/new/:id', async (req, res) => {
     // Redirect to the shelter page
     res.redirect(`/shelter/${req.params.id}`);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
