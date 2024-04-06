@@ -25,11 +25,10 @@ router.post('/new/:id', async (req, res) => {
   try {
     // Upload the photo to Imgur
     const response = await client.upload({
-      image: req.files.photo.data,
-      // image: fs.createReadStream('./public/photos/bongo.jpeg'),
-      type: 'stream',
+      image: req.files.photo.data.toString("base64"),
+      type: 'base64',
     });
-    
+
     // Get the Imgur link to the uploaded photo
     if(response.success === false) {
       console.log(response);
