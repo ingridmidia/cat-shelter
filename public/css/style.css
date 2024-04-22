@@ -1,286 +1,304 @@
 :root {
-    --light-purple: #E7BAEF;
-    --mint: #C1F0BB;
-    --soft-green: #EEF0BB;
-    margin: 0;
-    padding: 0;
+  --light-purple: #e7baef;
+  --mint: #c1f0bb;
+  --soft-green: #eef0bb;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 header {
-    background-color: var(--light-purple);
-    width: 95%;
-    padding: 20px;
-    border-radius: 0 0 10px 10px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    font-family: 'Lilita One', sans-serif;
-
+  background-color: var(--light-purple);
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Lilita One", sans-serif;
 }
 
-header>h1 {
-    font-size: 3rem;
+header > h1 {
+  font-size: 3rem;
 }
 
 nav {
-    display: fixed;
-    right: 0px;
-    width: 100%;
-    text-align: right;
-    margin-right: 10px;
+  display: fixed;
+  right: 0px;
+  width: 100%;
+  text-align: right;
+  margin-right: 10px;
 }
 
-nav>a {
-    color: black;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 18px;
+nav > a {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 18px;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-content: space-around;
-    width: 95%;
-    flex: 1;
-    font-family: 'Lilita One', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  width: 100%;
+  flex: 1;
+  font-family: "Lilita One", sans-serif;
 }
+
+#bg-image {
+  background-image: url("../photos/login-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #login-area {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin-top: 30px;
+} */
 
 #login-area {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 25rem;
-    height: 10rem;
-    align-items: center;
-    margin-top: 30px;
+  text-align: center;
+  width: 300px; /* Set a fixed width for the login box */
+  margin: 30px auto; /* Center the login box horizontally and add margin on top */
+  padding: 20px; /* Add padding inside the login box */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #fff; /* Add a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
 }
 
-#login-area>h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-family: 'Lilita One', sans-serif;
+#login-area > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: "Lilita One", sans-serif;
 }
 
 .btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: var(--mint);
-    border: none;
-    border-radius: 3px;
-    font-family: 'Lilita One', sans-serif;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--mint);
+  border: none;
+  border-radius: 3px;
+  font-family: "Lilita One", sans-serif;
 }
 
 .form-group {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #shelter-page {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .cat-card-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .cat-card {
-    width: 12rem;
-    height: 13rem;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px;
-    margin: 10px 10px;
+  width: 12rem;
+  height: 13rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px 10px;
 }
 
-.cat-card>img {
-    height: 60%;
-    margin: 0 auto;
+.cat-card > img {
+  height: 60%;
+  margin: 0 auto;
 }
 
-#shelter-page>h1 {
-    font-family: 'Lilita One', sans-serif;
-    font-size: 30px;
-    padding: 10px;
+#shelter-page > h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 30px;
+  padding: 10px;
 }
 
-#shelter-page>button {
-    background-color: var(--mint);
-    width: 25%;
-    margin: 50px auto;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
+#shelter-page > button {
+  background-color: var(--mint);
+  width: 25%;
+  margin: 50px auto;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
 }
 
 .shelter-card {
-    border: 1px solid black;
-    height: 100px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    text-align: center;
+  border: 1px solid black;
+  height: 100px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 #shelter-logo {
-    height: 50px;
-    margin: 0 auto;
+  height: 50px;
+  margin: 0 auto;
 }
 
 h5 {
-    font-size: 20px;
-    font-family: 'Lilita One', sans-serif;
+  font-size: 20px;
+  font-family: "Lilita One", sans-serif;
 }
 
 #shelter-area {
-    display: flex;
-    flex-flow: row wrap;
-    width: 50%;
-    justify-content: center;
-    font-family: 'Lilita One', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  justify-content: center;
+  font-family: "Lilita One", sans-serif;
 }
 
 .sign-up-area {
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    font-family: 'Lilita One', sans-serif;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Lilita One", sans-serif;
 }
 
 .new-location-form {
-    display: flex;
-    justify-content: center;
-
+  display: flex;
+  justify-content: center;
 }
 
-.sign-up-area>button {
-    width: 25%;
-    margin: 15px auto;
-    font-family: 'Lilita One', sans-serif;
+.sign-up-area > button {
+  width: 25%;
+  margin: 15px auto;
+  font-family: "Lilita One", sans-serif;
 }
 
-.sign-up-area>h2 {
-    font-family: 'Lilita One', sans-serif;
-    font-size: 25px;
-    margin-bottom: 20px;
+.sign-up-area > h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .new-location {
-    width: 60%;
+  width: 60%;
 }
 
 .location-username,
 .location-password {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .add-cat-form {
-    display: flex;
-    flex-direction: column;
-    line-height: 25px;
-
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
 }
 
-.add-cat-form>button {
-    background-color: var(--mint);
-    width: 50%;
-    margin: 5px auto;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-
+.add-cat-form > button {
+  background-color: var(--mint);
+  width: 50%;
+  margin: 5px auto;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
 }
 
 #cat-page {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    width: 75%;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 75%;
 }
 
-.cat-details>h3 {
-    font-size: 28px;
-    font-family: 'Lilita One', sans-serif;
+.cat-details > h3 {
+  font-size: 28px;
+  font-family: "Lilita One", sans-serif;
 }
 
 #cat-photo-caption {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.cat-details>img {
-    width: 300px;
-    border-radius: 10px;
-    margin-top: 20px;
+.cat-details > img {
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-.cat-details>button {
-    margin-top: 50px;
-    font-family: 'Lilita One', sans-serif;
+.cat-details > button {
+  margin-top: 50px;
+  font-family: "Lilita One", sans-serif;
 }
 
 #add-cat-button {
-    text-decoration: none;
-    color: black;
-    font-family: 'Lilita One', sans-serif;
-    font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-family: "Lilita One", sans-serif;
+  font-size: 18px;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .contact {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-grow: 1;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .contact li {
-    flex: 0 0 20%;
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 18px;
-    font-family: 'Lilita One', sans-serif;
+  flex: 0 0 20%;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 18px;
+  font-family: "Lilita One", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
-    header>h1 {
-        font-size: 2rem;
-    }
+  header > h1 {
+    font-size: 2rem;
+  }
 
-    .sign-up-area>h2 {
-        font-size: 20px;
-    }
+  .sign-up-area > h2 {
+    font-size: 20px;
+  }
 }
