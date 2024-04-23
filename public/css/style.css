@@ -1,7 +1,5 @@
 :root {
   --light-purple: #b89cf9;
-  --mint: #c1f0bb;
-  --soft-green: #eef0bb;
   --light-green: #e0fffa;
   --dark-green: #3a8a7c;
   --purple: #5c3a8a;
@@ -17,9 +15,19 @@ body {
   justify-content: center;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  width: 100%;
+  padding-top: 12rem;
+}
+
 header {
   background-color: var(--dark-green);
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 #amazing-cats {
@@ -31,6 +39,23 @@ header {
   text-align: center;
 }
 
+nav {
+  background-color: var(--light-green);
+  padding: 1rem;
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  text-align: right;
+}
+
+nav > a {
+  color: var(--dark-gray);
+  font-weight: bolder;
+  text-decoration: none; 
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
 .bg-image {
   display: flex;
   background-image: url("../photos/bg.png");
@@ -39,6 +64,10 @@ header {
   background-position: center;
   width: 100vw;
   height: 100vh;
+}
+
+#logout {
+    cursor: pointer;
 }
 
 #login-area {
@@ -58,7 +87,7 @@ header {
 }
 
 .demo {
-    color: black;
+  color: black;
   font-size: 1.2rem;
   margin-top: 1.5rem;
 }
@@ -106,27 +135,8 @@ header {
   background-color: var(--light-purple);
 }
 
-/* nav {
-  display: fixed;
-  right: 0px;
-  width: 100%;
-  text-align: right;
-  margin-right: 10px;
-}
 
-nav > a {
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 18px;
-} */
 
-/* main {
-  display: flex;
-  justify-content: center;
-  align-content: space-around;
-  width: 100%;
-} */
 
 #shelter-page {
   display: flex;
@@ -165,7 +175,7 @@ nav > a {
 }
 
 #shelter-page > button {
-  background-color: var(--mint);
+  background-color: var(--purple);
   width: 25%;
   margin: 50px auto;
   border: none;
@@ -289,32 +299,7 @@ h5 {
   font-size: 18px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.contact {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.contact li {
-  flex: 0 0 20%;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 18px;
-  font-family: "Lilita One", sans-serif;
-}
-
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #amazing-cats {
     font-size: 1rem;
   }
@@ -322,4 +307,4 @@ footer {
   .sign-up-area > h2 {
     font-size: 20px;
   }
-}
+} */
