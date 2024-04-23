@@ -221,6 +221,7 @@ h5 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 10rem;
 }
 
 .cat-card-container {
@@ -266,15 +267,7 @@ h5 {
   display: flex;
   flex-direction: column;
   line-height: 25px;
-}
-
-.add-cat-form > button {
-  background-color: var(--mint);
-  width: 50%;
-  margin: 5px auto;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
+  padding-top: 10rem;
 }
 
 #cat-page {
@@ -282,6 +275,7 @@ h5 {
   font-size: 18px;
   margin-top: 20px;
   width: 75%;
+  padding-top: 10rem;
 }
 
 .cat-details > h3 {
