@@ -1,9 +1,38 @@
 :root {
-  --light-purple: #e7baef;
+  --light-purple: #b89cf9;
   --mint: #c1f0bb;
   --soft-green: #eef0bb;
+  --light-green: #e0fffa;
+  --dark-green: #3a8a7c;
+  --purple: #5c3a8a;
+  --brown: #8a503a;
+  --dark-gray: #2d2835;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+header {
+  background-color: var(--dark-green);
+  width: 100%;
+}
+
+#amazing-cats {
+  color: var(--dark-gray);
+  font-family: "Lilita One", sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.bg-image {
+  display: flex;
   background-image: url("../photos/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,23 +41,58 @@
   height: 100vh;
 }
 
-body {
+#login-area {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  font-family: "Lilita One", sans-serif;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.login-form {
   justify-content: center;
 }
 
-header {
-  background-color: var(--mint);
-  width: 100%;
+.login-form > h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-#amazing-cats {
-  font-family: "Lilita One", sans-serif;
-  font-size: 3rem;
-  margin: 0; /* Remove any default margin */
-  padding: 2.1rem;
-  text-align: center; /* Center the text horizontally */
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--light-purple);
 }
 
 /* nav {
@@ -46,82 +110,11 @@ nav > a {
   font-size: 18px;
 } */
 
-main {
+/* main {
   display: flex;
   justify-content: center;
   align-content: space-around;
   width: 100%;
-  /* flex: 1; */
-  font-family: "Lilita One", sans-serif;
-}
-
-#login-area {
-  background-color: white;
-  border-radius: 2rem;
-  padding: 2rem;
-  text-align: center;
-  width: 80%;
-  max-width: 500px;
-  margin: 0 auto;
-  margin-top: 10vh;
-}
-
-#login-area > h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-family: "Lilita One", sans-serif;
-}
-
-.login-form {
-    justify-content: center;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-  padding: 2rem;
-}
-
-.form-input {
-  width: 100%; /* Make input fields fill the width of the login box */
-  padding: 1rem; /* Increase padding for better spacing */
-  font-size: 1.1rem; /* Increase font size */
-  border: 1px solid #ccc; /* Add a border to input fields */
-  border-radius: 0.5rem; /* Add rounded corners to input fields */
-}
-
-.btn {
-  padding: 0.75rem 2rem; /* Increase button padding */
-  font-size: 1.1rem; /* Increase button font size */
-  background-color: var(--mint); /* Use custom color variable */
-  color: white; /* Button text color */
-  border: none; /* Remove button border */
-  border-radius: 0.5rem; /* Add rounded corners to buttons */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.btn:hover {
-  background-color: #5cb85c; /* Button background color on hover */
-}
-
-
-/* #login-area > h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  font-family: "Lilita One", sans-serif;
-}
-
-.btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: var(--mint);
-  border: none;
-  border-radius: 3px;
-  font-family: "Lilita One", sans-serif;
-}
-
-.form-group {
-  display: flex;
-  justify-content: space-between;
 } */
 
 #shelter-page {
