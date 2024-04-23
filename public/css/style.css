@@ -4,6 +4,12 @@
   --soft-green: #eef0bb;
   margin: 0;
   padding: 0;
+  background-image: url("../photos/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
@@ -13,23 +19,19 @@ body {
 }
 
 header {
-  background-color: var(--light-purple);
+  background-color: var(--mint);
   width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
+}
+
+#amazing-cats {
   font-family: "Lilita One", sans-serif;
-}
-
-header > h1 {
   font-size: 3rem;
+  margin: 0; /* Remove any default margin */
+  padding: 2.1rem;
+  text-align: center; /* Center the text horizontally */
 }
 
-nav {
+/* nav {
   display: fixed;
   right: 0px;
   width: 100%;
@@ -42,52 +44,67 @@ nav > a {
   text-decoration: none;
   margin-left: 10px;
   font-size: 18px;
-}
+} */
 
 main {
   display: flex;
   justify-content: center;
   align-content: space-around;
   width: 100%;
-  flex: 1;
+  /* flex: 1; */
   font-family: "Lilita One", sans-serif;
 }
 
-#bg-image {
-  background-image: url("../photos/login-image.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* #login-area {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  align-items: center;
-  margin-top: 30px;
-} */
-
 #login-area {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem;
   text-align: center;
-  width: 300px; /* Set a fixed width for the login box */
-  margin: 30px auto; /* Center the login box horizontally and add margin on top */
-  padding: 20px; /* Add padding inside the login box */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 5px; /* Add rounded corners */
-  background-color: #fff; /* Add a background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10vh;
 }
 
 #login-area > h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Lilita One", sans-serif;
+}
+
+.login-form {
+    justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+
+.form-input {
+  width: 100%; /* Make input fields fill the width of the login box */
+  padding: 1rem; /* Increase padding for better spacing */
+  font-size: 1.1rem; /* Increase font size */
+  border: 1px solid #ccc; /* Add a border to input fields */
+  border-radius: 0.5rem; /* Add rounded corners to input fields */
+}
+
+.btn {
+  padding: 0.75rem 2rem; /* Increase button padding */
+  font-size: 1.1rem; /* Increase button font size */
+  background-color: var(--mint); /* Use custom color variable */
+  color: white; /* Button text color */
+  border: none; /* Remove button border */
+  border-radius: 0.5rem; /* Add rounded corners to buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.btn:hover {
+  background-color: #5cb85c; /* Button background color on hover */
+}
+
+
+/* #login-area > h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   font-family: "Lilita One", sans-serif;
@@ -105,7 +122,7 @@ main {
 .form-group {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 #shelter-page {
   display: flex;
@@ -294,8 +311,8 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  header > h1 {
-    font-size: 2rem;
+  #amazing-cats {
+    font-size: 1rem;
   }
 
   .sign-up-area > h2 {
