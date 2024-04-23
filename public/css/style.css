@@ -20,7 +20,6 @@ main {
   justify-content: center;
   align-content: space-around;
   width: 100%;
-  padding-top: 12rem;
 }
 
 header {
@@ -51,7 +50,7 @@ nav {
 nav > a {
   color: var(--dark-gray);
   font-weight: bolder;
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 1.3rem;
   margin-right: 1rem;
 }
@@ -67,7 +66,7 @@ nav > a {
 }
 
 #logout {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #login-area {
@@ -135,8 +134,83 @@ nav > a {
   background-color: var(--light-purple);
 }
 
+#dashboard {
+  padding-top: 12rem;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.shelter-card {
+  border: 1px solid black;
+  height: 100px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
 
+#shelter-logo {
+  height: 50px;
+  margin: 0 auto;
+}
+
+h5 {
+  font-size: 20px;
+  font-family: "Lilita One", sans-serif;
+}
+
+#shelter-area {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  justify-content: center;
+  font-family: "Lilita One", sans-serif;
+}
+
+#sign-up-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 2rem;
+  box-sizing: border-box;
+  font-family: "Lilita One", sans-serif;
+  border: solid var(--purple);
+}
+
+.new-location-form {
+  display: grid;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.new-location-form h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.new-location-form .btn {
+  justify-self: center;
+}
 
 #shelter-page {
   display: flex;
@@ -181,73 +255,6 @@ nav > a {
   border: none;
   border-radius: 3px;
   padding: 10px 20px;
-}
-
-.shelter-card {
-  border: 1px solid black;
-  height: 100px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-#shelter-logo {
-  height: 50px;
-  margin: 0 auto;
-}
-
-h5 {
-  font-size: 20px;
-  font-family: "Lilita One", sans-serif;
-}
-
-#shelter-area {
-  display: flex;
-  flex-flow: row wrap;
-  width: 50%;
-  justify-content: center;
-  font-family: "Lilita One", sans-serif;
-}
-
-.sign-up-area {
-  display: flex;
-  width: 50%;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-family: "Lilita One", sans-serif;
-}
-
-.new-location-form {
-  display: flex;
-  justify-content: center;
-}
-
-.sign-up-area > button {
-  width: 25%;
-  margin: 15px auto;
-  font-family: "Lilita One", sans-serif;
-}
-
-.sign-up-area > h2 {
-  font-family: "Lilita One", sans-serif;
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.new-location {
-  width: 60%;
-}
-
-.location-username,
-.location-password {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .add-cat-form {
@@ -299,12 +306,14 @@ h5 {
   font-size: 18px;
 }
 
-/* @media screen and (max-width: 768px) {
-  #amazing-cats {
-    font-size: 1rem;
+@media screen and (max-width: 768px) {
+  #dashboard {
+    flex-direction: column;
   }
 
-  .sign-up-area > h2 {
-    font-size: 20px;
+  #shelter-area,
+  #sign-up-area {
+    width: 100%;
+    padding-top: 4rem;
   }
-} */
+}

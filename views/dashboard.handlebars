@@ -1,32 +1,41 @@
-<div id= "shelter-area">
+<div id="dashboard">
+  <div id="shelter-area">
     {{#if logged_in}}
-    {{#each shelters as |shelter|}}
-    <div class="card shelter-card" style="width: 18rem;">
-        <div>
-            <img src="/photos/logo.png" alt="AC Logo" id="shelter-logo">
+      {{#each shelters as |shelter|}}
+        <div class="card shelter-card" style="width: 18rem;">
+          <div>
+            <img src="/photos/logo.png" alt="AC Logo" id="shelter-logo" />
             <h5 class="card-title">{{shelter.username}}</h5>
-            <a href="/shelter/{{shelter.id}}" class="view-location">View Available Cats</a>
+            <a href="/shelter/{{shelter.id}}" class="view-location">View
+              Available Cats</a>
+          </div>
         </div>
-    </div>
-    {{/each}}
+      {{/each}}
     {{/if}}
-</div>
-<div class="sign-up-area">
-        <h2>Add New Location</h2>
+  </div>
 
-        <form class="new-location-form">
-            <div class="new-location">
-            <div class="location-username">
-                <label for="username-signup">Username:</label>
-                <input class="form-input" type="text" id="username-signup" />
-            </div>
-            <div class="location-password">
-                <label for="password-signup">Password:</label>
-                <input class="form-input" type="password" id="password-signup" />
-            </div>
-            <button class="btn" type="submit">Add</button>
-            </div>
-        </form>
+   <div id="sign-up-area">
+      <form class="new-location-form">
+        <h2>Add New Location</h2>
+        <div class="form-group">
+          <input
+            class="form-input"
+            type="text"
+            id="username-signup"
+            placeholder="Username"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-input"
+            type="password"
+            id="password-signup"
+            placeholder="Password"
+          />
+        </div>
+        <button class="btn" type="submit">Add</button>
+      </form>
+    </div>
+
 </div>
 <script src="./js/newLocation.js"></script>
-
