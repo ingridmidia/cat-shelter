@@ -14,7 +14,7 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 header {
@@ -45,9 +45,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-content: center;
   align-self: center;
-  font-family: "Lilita One", sans-serif;
   background-color: white;
   border-radius: 2rem;
   padding: 2rem;
@@ -55,6 +53,18 @@ header {
   width: 80%;
   max-width: 900px;
   margin: 0 auto;
+  flex-direction: column;
+  color: var(--purple);
+}
+
+.demo {
+    color: black;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.demo p {
+  margin-bottom: 0.5rem;
 }
 
 .login-form {
@@ -62,6 +72,7 @@ header {
 }
 
 .login-form > h2 {
+  font-family: "Lilita One", sans-serif;
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
