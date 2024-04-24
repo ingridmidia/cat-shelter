@@ -314,6 +314,18 @@ padding-top: 12rem;
   font-size: 18px;
 }
 
+footer {
+  display: flex;
+  background-image: url("../photos/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+}
+
 @media screen and (max-width: 768px) {
   #dashboard {
     flex-direction: column;
@@ -322,10 +334,15 @@ padding-top: 12rem;
   #shelter-area,
   #sign-up-area {
     width: 80%;
+    margin-top: 0;
   }
 
   #amazing-cats {
     padding-bottom: 1rem;
     text-align: center;
+  }
+
+  footer{
+    height: 2rem;
   }
 }
