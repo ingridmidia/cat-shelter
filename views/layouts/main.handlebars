@@ -18,11 +18,10 @@
 
 <body>
     <header style="{{#unless logged_in}}display: none;{{/unless}}">
-        <div id="amazing-cats">
+        <nav>
+            <div id="amazing-cats">
             <h1 >AMAZING CATS</h1>
         </div>
-        
-        <nav>
             {{#if logged_in}}
             <a href="/dashboard">Home</a>
             <a id="logout">Logout</a>

@@ -23,24 +23,25 @@ main {
 }
 
 header {
-  background-color: var(--dark-green);
+  background-color: var(--light-green);
   width: 100%;
   position: fixed;
   top: 0;
+  padding-top: 1rem;
 }
 
 #amazing-cats {
-  color: var(--dark-gray);
+  color: var(--purple);
   font-family: "Lilita One", sans-serif;
   font-size: 3rem;
   margin: 0;
-  padding: 1.5rem;
-  text-align: center;
+  text-align: start;
+  margin-left: 1rem;
 }
 
 nav {
   background-color: var(--light-green);
-  padding: 1rem;
+  padding: 0.5rem;
   position: fixed;
   right: 0px;
   left: 0px;
@@ -48,7 +49,7 @@ nav {
 }
 
 nav > a {
-  color: var(--dark-gray);
+  color: var(--purple);
   font-weight: bolder;
   text-decoration: none;
   font-size: 1.3rem;
@@ -137,28 +138,7 @@ nav > a {
 #dashboard {
   padding-top: 10rem;
   display: flex;
-}
-
-.shelter-card {
-  border: 1px solid black;
-  height: 100px;
-  width: 14rem;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-#shelter-logo {
-  height: 50px;
-  margin: 0 auto;
-}
-
-h5 {
-  font-size: 20px;
-  font-family: "Lilita One", sans-serif;
 }
 
 #shelter-area {
@@ -170,7 +150,27 @@ h5 {
   width: 50%;
   margin: 2rem;
   box-sizing: border-box;
-  font-family: "Lilita One", sans-serif;
+}
+
+.shelter-card {
+  border: 1px solid black;
+  height: 8rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#shelter-logo {
+  height: 3rem;
+  margin: 0 auto;
+}
+
+h5 {
+  font-size: 20px;
 }
 
 #sign-up-area {
@@ -246,6 +246,7 @@ h5 {
 .cat-card > img {
   height: 60%;
   margin: 0 auto;
+  width: min-content;
 }
 
 #shelter-page > h1 {
@@ -263,11 +264,21 @@ h5 {
   padding: 10px 20px;
 }
 
+.add-cat {
+padding-top: 12rem;
+}
+
 .add-cat-form {
   display: flex;
   flex-direction: column;
-  line-height: 25px;
-  padding-top: 10rem;
+  line-height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+#new-cat-submit {
+    margin-top: 1rem;
 }
 
 #cat-page {
@@ -294,14 +305,12 @@ h5 {
 }
 
 .cat-details > button {
-  margin-top: 50px;
-  font-family: "Lilita One", sans-serif;
+  margin-top: 1rem;
 }
 
 #add-cat-button {
   text-decoration: none;
-  color: black;
-  font-family: "Lilita One", sans-serif;
+  color: white;
   font-size: 18px;
 }
 
@@ -312,6 +321,11 @@ h5 {
 
   #shelter-area,
   #sign-up-area {
-    width: 80%;   
+    width: 80%;
+  }
+
+  #amazing-cats {
+    padding-bottom: 1rem;
+    text-align: center;
   }
 }

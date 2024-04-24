@@ -1,14 +1,16 @@
+<div class="add-cat">
 <form class="add-cat-form" type="submit" action="/api/cat/new/{{shelter_id}}" method="post"
     encType="multipart/form-data">
     <label for="cat-name">Name: </label>
-    <input id="cat-name" name="name" type="text">
+    <input id="cat-name" name="name" type="text" class="form-input">
     <label for="cat-breed">Breed: </label>
-    <input id="cat-breed" name="breed" type="text">
+    <input id="cat-breed" name="breed" type="text" class="form-input">
     <label for="cat-age">Age: </label>
-    <input id="cat-age" name="age" type="text">
+    <input id="cat-age" name="age" type="text" class="form-input">
     <label for="cat-description">Description: </label>
-    <input id="cat-description" name="description" type="text">
+    <input id="cat-description" name="description" type="text" class="form-input">
     <label for="cat-photo">Choose a photo:</label>
     <input type="file" id="cat-photo" name="photo" accept=".jpg, .jpeg, .png" />
     <button class="btn" id="new-cat-submit">Submit</button>
 </form>
+</div>
