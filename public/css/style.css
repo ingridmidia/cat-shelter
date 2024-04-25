@@ -329,6 +329,7 @@ footer {
 @media screen and (max-width: 768px) {
   #dashboard {
     flex-direction: column;
+    padding-top: 8rem;
   }
 
   #shelter-area,
