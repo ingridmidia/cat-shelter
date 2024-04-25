@@ -300,7 +300,7 @@ h5 {
 .cat-details > img {
   height: 300px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 .cat-details > button {
@@ -310,7 +310,7 @@ h5 {
 #add-cat-button {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 footer {
@@ -349,6 +349,6 @@ footer {
   }
 
   footer {
-    height: 2rem;
+    height: 1.5rem;
   }
 }
